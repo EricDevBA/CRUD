@@ -11,7 +11,7 @@
 
             <div class="col-md-6">
                 Nome: <i class="fa fa-user"></i>
-                <input class="form-control" type="text" name="name" required autofocus><br>
+                <input class="form-control" type="text" name="nome" required autofocus><br>
             </div>
 
             <div class="col-md-6">
@@ -26,17 +26,17 @@
 
             <div class="col-md-4">
                 Data de Nascimento: <i class="fa fa-calendar"></i>
-                <input class="form-control" type="date" name="birth" required><br>
+                <input class="form-control" type="date" name="data_nascimento" required><br>
             </div>
 
             <div class="col-md-4">
                 Telefone: <i class="fab fa-whatsapp"></i>
-                <input class="form-control" type="text" name="phone" id="phone" required><br>
+                <input class="form-control" type="text" name="telefone" id="telefone" required><br>
             </div>
 
             <div class="col-md-12">
                 Endereço: <i class="fa fa-map"></i>
-                <input class="form-control" type="text" name="address" required><br>
+                <input class="form-control" type="text" name="endereco" required><br>
             </div>
 
             <div class="col-md-4">
@@ -73,7 +73,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#cpf").mask("000.000.000-00");
-        $("#phone").mask("(00) 00000-0000");
+        $("#telefone").mask("(00) 00000-0000");
 
     });
 
