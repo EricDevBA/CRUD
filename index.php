@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php
+include_once 'model/Conexao.class.php';
+include_once 'model/Gerenciamento.class.php';
+
+$gerenciamento = new Gerenciamento();
+
+?>
+
 <html>
 <head>
 	<?php include_once 'view/dependencias.php'; ?>
@@ -19,7 +28,7 @@
 
 	<div class="table-responsive">
 		
-		<table class="table table-hover">
+		<table class="table table-hover-lg">
 			<thead class="thead">
 				<tr>
 					<th>ID</th>
@@ -33,14 +42,16 @@
 				</tr>
 			</thead>
 			<tbody>
+
+			<?php foreach($gerenciamento->ListarClient("registros") as $client):?>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><?php echo $client['id']?></td>
+					<td><?php echo $client['nome']?></td>	
+					<td><?php echo $client['email']?></td>
+					<td><?php echo $client['cpf']?></td>
+					<td><?php echo date("d/m/Y",strtotime($client['data_nascimento']));?></td>
+					<td><?php echo $client['endereco']?></td>
+					<td><?php echo $client['telefone']?></td>
 					<td>
 						<form method="POST">
 							<button class="btn btn-warning btn-xs">
@@ -56,6 +67,7 @@
 						</form>
 					</td>
 				</tr>
+<?php endforeach; ?>
 			</tbody>
 		</table>
 
