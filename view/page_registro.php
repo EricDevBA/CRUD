@@ -1,7 +1,7 @@
 <?php include_once 'dependencias.php'; ?>
 
 <h2 class="text-center">
-    Realize seu cadastro! <i class="fa fa-user-plus"></i>
+    Cadastra-se <i class="fa fa-user-plus"></i>
  </h2><hr>
 
 
@@ -54,13 +54,6 @@
             </div>
 
 
-
-
-
-
-
-
-
         </div>
     </div>
 
@@ -76,6 +69,5 @@
         $("#telefone").mask("(00) 00000-0000");
 
     });
-
 
 </script>

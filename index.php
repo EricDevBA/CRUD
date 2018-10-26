@@ -28,7 +28,7 @@ $gerenciamento = new Gerenciamento();
 
 	<div class="table-responsive">
 		
-		<table class="table table-hover-lg">
+		<table class="table table-hover w-100">
 			<thead class="thead">
 				<tr>
 					<th>ID</th>
@@ -45,32 +45,38 @@ $gerenciamento = new Gerenciamento();
 
 			<?php foreach($gerenciamento->ListarClient("registros") as $client):?>
 				<tr>
-					<td><?php echo $client['id']?></td>
-					<td><?php echo $client['nome']?></td>	
-					<td><?php echo $client['email']?></td>
-					<td><?php echo $client['cpf']?></td>
+					<td><?php echo $client['id'];?></td>
+					<td><?php echo $client['nome'];?></td>	
+					<td><?php echo $client['email'];?></td>
+					<td><?php echo $client['cpf'];?></td>
 					<td><?php echo date("d/m/Y",strtotime($client['data_nascimento']));?></td>
-					<td><?php echo $client['endereco']?></td>
-					<td><?php echo $client['telefone']?></td>
+					<td><?php echo $client['endereco'];?></td>
+					<td><?php echo $client['telefone'];?></td>
 					<td>
-						<form method="POST">
+						<form method="POST" action="view/page_update.php">
+						<input type="hidden" name="id" value="<?=$client['id']?>">
+
 							<button class="btn btn-warning btn-xs">
 								<i class="fa fa-user-edit"></i>
 							</button>
+
 						</form>
 					</td>
 					<td>
-						<form method="POST" onclick="return confirm('Tem certeza que deseja excluir ?');">
-							<button class="btn btn-danger btn-xs">
-								<i class="fa fa-trash"></i>
-							</button>
+						<form method="POST" action="controller/delete_cliente.php" onclick="return confirm('Tem certeza que deseja excluir ?');">
+								<input type="hidden" name="id" value="<?=$client['id']?>">
+								
+								<button class="btn btn-danger btn-xs">
+									<i class="fa fa-trash"></i>
+								</button>
+
 						</form>
 					</td>
 				</tr>
 <?php endforeach; ?>
 			</tbody>
 		</table>
-
+	</div>
 	</div>
 
 	<!-- Fim da Tabela -->
